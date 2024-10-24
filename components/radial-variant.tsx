@@ -18,7 +18,7 @@ type RadialVariantProps = {
 
 export const RadialVariant = ({ data }: RadialVariantProps) => {
   return (
-    <ResponsiveContainer width="100%" height={350}>
+    <ResponsiveContainer width="100%" height={600}>
       <RadialBarChart
         cx="50%"
         cy="30%"

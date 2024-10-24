@@ -11,7 +11,24 @@ import { formatPercentage } from "@/lib/utils";
 
 import { CategoryTooltip } from "./category-tooltip";
 
-const COLORS = ["#0062FF", "#12C6FF", "#FF647F", "#FF9354"];
+const COLORS = [
+  "#0062FF",
+  "#12C6FF",
+  "#FF647F",
+  "#FF9354",
+  "#34D399",
+  "#F472B6",
+  "#A855F7",
+  "#FBBF24",
+  "#3B82F6",
+  "#10B981",
+  "#EF4444",
+  "#F97316",
+  "#818CF8",
+  "#EC4899",
+  "#22D3EE"
+];
+
 
 type PieVariantProps = {
   data: {
@@ -22,7 +39,7 @@ type PieVariantProps = {
 
 export const PieVariant = ({ data }: PieVariantProps) => {
   return (
-    <ResponsiveContainer width="100%" height={350}>
+    <ResponsiveContainer width="100%" height={600}>
       <PieChart>
         <Legend
           layout="horizontal"

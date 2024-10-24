@@ -115,8 +115,12 @@ const app = new Hono().get(
       .groupBy(categories.name)
       .orderBy(desc(sql`SUM(ABS(${transactions.amount}))`));
 
-    const topCategories = category.slice(0, 3);
-    const otherCategories = category.slice(3);
+    const topCategories = category.slice(0, 15);
+    const otherCategories = category.slice(15);
+    console.log("category", category);
+    console.log("topCategories", topCategories);
+    console.log("otherCategories", otherCategories);
+    
     const otherSum = otherCategories.reduce(
       (sum, current) => sum + current.value,
       0

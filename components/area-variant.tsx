@@ -20,7 +20,7 @@ type AreaVariantProps = {
 
 export const AreaVariant = ({ data }: AreaVariantProps) => {
   return (
-    <ResponsiveContainer width="100%" height={350}>
+    <ResponsiveContainer width="100%" height={600}>
       <AreaChart data={data}>
         <CartesianGrid strokeDasharray="3 3" />
         <defs>

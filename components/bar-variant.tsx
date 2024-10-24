@@ -20,7 +20,7 @@ type BarVariantProps = {
 
 export const BarVariant = ({ data }: BarVariantProps) => {
   return (
-    <ResponsiveContainer width="100%" height={350}>
+    <ResponsiveContainer width="100%" height={600}>
       <BarChart data={data}>
         <CartesianGrid strokeDasharray="3 3" />
 

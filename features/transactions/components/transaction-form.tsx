@@ -164,6 +164,7 @@ export const TransactionForm = ({
                 <Input
                   disabled={disabled}
                   placeholder="Add a payee"
+                  defaultValue={field.value || "Merchant"}
                   {...field}
                 />
               </FormControl>

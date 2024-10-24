@@ -11,41 +11,28 @@ config({ path: ".env.local" });
 const sql = neon(process.env.DATABASE_URL!);
 const db = drizzle(sql);
 
-const SEED_USER_ID = "user_2gIujdiMTbMqEMKu0iUjgYUmox1";
+const SEED_USER_ID = "user_2VPhZc6HOVfme0BoEZhij2btyA9";
 const SEED_CATEGORIES = [
-  {
-    id: "category_1",
-    name: "Food",
-    userId: SEED_USER_ID,
-  },
-  {
-    id: "category_2",
-    name: "Rent",
-    userId: SEED_USER_ID,
-  },
-  {
-    id: "category_3",
-    name: "Utilities",
-    userId: SEED_USER_ID,
-  },
-  {
-    id: "category_4",
-    name: "Clothing",
-    userId: SEED_USER_ID,
-  },
+  { id: "category_1", name: "Food", userId: SEED_USER_ID },
+  { id: "category_2", name: "Rent", userId: SEED_USER_ID },
+  { id: "category_3", name: "Utilities", userId: SEED_USER_ID },
+  { id: "category_4", name: "Clothing", userId: SEED_USER_ID },
+  { id: "category_5", name: "Entertainment", userId: SEED_USER_ID },
+  { id: "category_6", name: "Transportation", userId: SEED_USER_ID },
+  { id: "category_7", name: "Healthcare", userId: SEED_USER_ID },
+  { id: "category_8", name: "Groceries", userId: SEED_USER_ID },
+  { id: "category_9", name: "Insurance", userId: SEED_USER_ID },
+  { id: "category_10", name: "Education", userId: SEED_USER_ID },
+  { id: "category_11", name: "Travel", userId: SEED_USER_ID },
+  { id: "category_12", name: "Savings", userId: SEED_USER_ID },
+  { id: "category_13", name: "Gifts", userId: SEED_USER_ID },
+  { id: "category_14", name: "Subscriptions", userId: SEED_USER_ID },
+  { id: "category_15", name: "Miscellaneous", userId: SEED_USER_ID },
 ];
 
 const SEED_ACCOUNTS = [
-  {
-    id: "account_1",
-    name: "Checking",
-    userId: SEED_USER_ID,
-  },
-  {
-    id: "account_2",
-    name: "Savings",
-    userId: SEED_USER_ID,
-  },
+  { id: "account_1", name: "Checking", userId: SEED_USER_ID },
+  { id: "account_2", name: "Savings", userId: SEED_USER_ID },
 ];
 
 const defaultTo = new Date();
@@ -56,18 +43,29 @@ const SEED_TRANSACTIONS: (typeof transactions.$inferSelect)[] = [];
 const generateRandomAmount = (category: typeof categories.$inferInsert) => {
   switch (category.name) {
     case "Rent":
-      return Math.random() * 400 + 90; // Rent will likely be a large amount
+      return Math.random() * 400 + 90;
     case "Utilities":
       return Math.random() * 200 + 50;
     case "Food":
       return Math.random() * 30 + 10;
     case "Transportation":
-    case "Health":
+    case "Healthcare":
       return Math.random() * 50 + 15;
     case "Entertainment":
     case "Clothing":
     case "Miscellaneous":
       return Math.random() * 100 + 20;
+    case "Groceries":
+      return Math.random() * 50 + 20;
+    case "Insurance":
+    case "Savings":
+    case "Subscriptions":
+      return Math.random() * 100 + 50;
+    case "Education":
+      return Math.random() * 150 + 50;
+    case "Travel":
+    case "Gifts":
+      return Math.random() * 300 + 50;
     default:
       return Math.random() * 50 + 10;
   }

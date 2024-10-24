@@ -16,7 +16,7 @@ type RadarVariantProps = {
 
 export const RadarVariant = ({ data }: RadarVariantProps) => {
   return (
-    <ResponsiveContainer width="100%" height={350}>
+    <ResponsiveContainer width="100%" height={600}>
       <RadarChart cx="50%" cy="50%" outerRadius="60%" data={data}>
         <PolarGrid />
         <PolarAngleAxis style={{ fontSize: "12px" }} dataKey="name" />
